@@ -124,7 +124,8 @@ function more() {
 function changeCurrentNumber() {
   if (currentNumber == 1) {
     currentNumber = 2
-  }
+  };
+  click = 0;
 }
 
 //Operators
@@ -173,7 +174,7 @@ $("#equal").on('click', function() {
   if (click > 10) {
     $screen.empty();
     var answerLength = answer.tostring();
-    //click = answerLength.length;
+    click = answerLength.length;
     console.log(click);
   }
   //$screen.append(answer)
