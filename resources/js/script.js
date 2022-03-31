@@ -12,12 +12,12 @@ var $number = $(".number");
 
 $number.on('click', function() {
     click++;
-  if (click > 8){
+  if (click > 10){
     return;
   }
   var numberPressed = $(this).html();
     $screen.append(numberPressed);
-    $("clear").css('background-color, #2d25c4');
+    $("#clear").css('background-color, #2d25c4');
 
     if (currentNumber == 1) {
       if (num1 == null) {
@@ -33,7 +33,7 @@ $number.on('click', function() {
         } else {
           num2 = num2 + numberPressed
         }
-        $("equal").css('background-color, #2d25c4');
+        $("#equal").css('background-color, #2d25c4');
       }
 	})
 
@@ -110,8 +110,8 @@ function findAnswer() {
 }
 
 function more() {
-  if (click > 8) {
-    click = click - 5;
+  if (click > 10) {
+    //click = click - 5;
   }
   if (currentNumber == 2) {
     findAnswer();
@@ -170,15 +170,16 @@ $("#plus").on('click', function() {
 $("#equal").on('click', function() {
   $screen.append("=");
   findAnswer();
-  if (click > 8) {
+  if (click > 10) {
     $screen.empty();
     var answerLength = answer.tostring();
-    click = answerLength.length;
+    //click = answerLength.length;
     console.log(click);
   }
   //$screen.append(answer)
 
-    num1 = null;
+    //num1 = null;
     num2 = null;
     currentNumber = 1;
+    click = 0
   })
